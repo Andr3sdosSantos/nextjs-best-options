@@ -17,10 +17,21 @@
 
 <code>yarn create-next-app [nome-do-projeto] - npm init next-app [nome-do-projeto]</code>
 
-<p><strong>Rode o projeto</strong></p>
+<p><strong>Rode o projeto:</strong></p>
+
 <code>yarn dev - npm run dev</code>
 
 <p><strong>Faça alterações</strong></p>
+
 <p>Aqui cabe observar que o Next.js fornece um recurso chamado <strong><i>Hot Reloading</i></strong> que faz com 
 que o Next faça alterações direto no navegador sem a necessidade de alterações.</p>
-<p>Na pasta: <code>/pages/index.js</code> troque de 'Welcome to' para 'Learn' e veja a mágica acontecer. Lembrando que o <i>entry-point</i> da página é o arquivo de index, ou seja, como o Next.js usa a pasta 'pages' para construir a URL fica assim: 'http://localhost:3000/{aqui entra o index.js}'</p>
+<p><u>Na pasta:</u> <code>/pages/index.js</code> troque de 'Welcome to' para 'Learn' e veja a mágica acontecer. Lembrando que o <i>entry-point</i> da página é o arquivo de index, ou seja, como o Next.js usa a pasta 'pages' para construir a URL fica assim: 'http://localhost:3000/{aqui entra o index.js}'</p>
+
+<p><strong>Adicionando uma nova pasta:</strong></p>
+<p>Para adicionar uma nova pasta você pode, dentro de <code>/pages</code> adicionar um diretório de mais baixo nível, então fica assim: <code>/pages/[nome-da-rota].js</code>
+ao fazer isso você precisa criar uma função com o <code>export default</code> por padrão: </p>
+<code>export default function [nome-da-função]() {
+  return (
+    <p>Código JSX.</p>
+  )  
+}</code>
