@@ -1,8 +1,8 @@
-<img src="/images/github/logo-next.png" alt="">
+<img src="/images/github/next-logo.jpg" alt="">
 
 <h1>myBlog</h1>
 
-<h2><strong>Nesse repositório vamos criar um blog seguindo os passos da documentação do Next.js</strong></h2>
+<h5>Nesse repositório vamos criar um blog seguindo os passos da documentação do Next.js</h5>
 
 <p><strong>Mas...por que o Next.js?</strong></p>
 <p>O Next.js é um framework voltado para o desenvolvimento web frontend, as características que mais me chamou atenção nele foram: </p>
