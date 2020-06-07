@@ -35,3 +35,16 @@ ao fazer isso você precisa criar uma função com o <code>export default</code>
     Código JSX.
   )  
 }</pre>
+
+<p><strong>Adicionando o componente <code>Link</code></strong></p>
+<p>O Next.js usa muitas bibliotecas embutidas, a sintaxe é bem semelhante com o ReactJS, para adicionar um link é necessário:</p>
+<pre>import Link from 'next/link'
+  export default function TestLink() {
+    <Link href="/pages/[página-que-eu-quero]">Teste de link </Link>
+  }
+</pre>
+<p>A navegação através do <code>Link</code> permite que você ande de uma página para outra usando o <i>JavaScript</i> que é mais rápido que o próprio navegador.
+Isso acontece porque o navegador carrega a página toda, já o <i>JavaScript</i> não carrega toda a página.</p>
+
+<p><strong>Pré-busca de código:</strong></p>
+<img src="/images/github/loading-next.png" alt="">
