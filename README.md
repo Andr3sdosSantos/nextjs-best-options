@@ -1,4 +1,4 @@
-<img src="/images/github/logo-nextjs.png" alt="">
+<img src="/images/github/next-logo.jpg" alt="">
 <h1>myBlog</h1>
 <hr>
 <p><strong>Nesse repositório vamos criar um blog seguindo os passos da documentação do Next.js</strong></p>
