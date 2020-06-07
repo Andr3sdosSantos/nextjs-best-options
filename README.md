@@ -30,8 +30,8 @@ que o Next faça alterações direto no navegador sem a necessidade de alteraç�
 <p><strong>Adicionando uma nova pasta:</strong></p>
 <p>Para adicionar uma nova pasta você pode, dentro de <code>/pages</code> adicionar um diretório de mais baixo nível, então fica assim: <code>/pages/[nome-da-rota].js</code>
 ao fazer isso você precisa criar uma função com o <code>export default</code> por padrão: </p>
-<code>export default function [nome-da-função]() {
+<pre>export default function [nome-da-função]() {
   return (
-    <p>Código JSX.</p>
+    Código JSX.
   )  
-}</code>
+}</pre>
