@@ -119,7 +119,6 @@ Isso vem do suporte interno do Next, como já vimos acima!</P>
   function Layout({ children }) {
     return <div>{children}</div>
   }
-
   export default Layout
 </pre>
 <p>Em seguida, importe Layout dentro de <code>/pages/posts/first-project.js</code> e coloque-o sendo o mais externo possível. </p>
