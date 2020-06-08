@@ -70,27 +70,26 @@ o código da página de destino já estará carregado em segundo plano e a trans
 
 <h2>Ativos estáticos</h2>
 
-<p><strong><code>Public:</code></strong></p>
+<p><strong>Public:</strong></p>
 <p>O Next.js utiliza a pasta <code>/public</code> para guardar arquivos estáticos como imagens. Esse diretório
 fica na raiz do projeto, igual ao <code>/pages</code>.</p>
-<pre>
-  <code><img src="/..." alt="..." className="..."></code>
-</pre>
+
+<code><img src="..." alt="..." className="..."></code>
 
 <h2>Adicionando Metadados</h2>
 
-<p><strong><code>Head component: </code></strong></p>
+<p><strong>Head component: </strong></p>
 <p>Para mudar, por exemplo o título da página basta importar o <code><Head></code>, fica assim: </p>
 <pre>
   <code>
     import Head from 'next/head';
     ...function () {
       return (
-        <>
+        <div>
           <Head>
             <title>Mudei meu título...</title>
           </Head>
-        </>
+        </div>
       )
     }
   </code>
@@ -103,10 +102,86 @@ fica na raiz do projeto, igual ao <code>/pages</code>.</p>
 <pre>
   <code>
     <style jsx>{`
-      ... código CSS
+      ...Código CSS
     `}</style>
   </code>
 </pre>
 <P>Aqui você está usando a biblioteca chamada <code>sytled-jsx</code>, ou seja, uma lib <i>"CSS-in-JS"</i> que permite escrever
 CSS em um componente React, fazendo com que os estilos tenham escopo definido - outros components não serão afetados.
 Isso vem do suporte interno do Next, como já vimos acima!</P>
+
+<h2><strong>Components de </strong><code>Layout</code></h2>
+
+<p><strong>Layout:</strong></p>
+<p>Para isso vamos criar uma pasta na raiz do projeto, <code>/components</code> e adicionaremos a ela um arquivo chamado 
+<code>layout.js</code>.</p>
+<pre>
+  function Layout({ children }) {
+    return <div>{children}</div>
+  }
+
+  export default Layout
+</pre>
+<p>Em seguida, importe Layout dentro de <code>/pages/posts/first-project.js</code> e coloque-o sendo o mais externo possível. </p>
+<pre>
+  <code>
+    import Link from 'next/link'
+    import Layout from '../../components/layout'
+      
+    export default function FirstPost() {
+      return (
+        <Layout>
+          <Head>
+            <title>First Post</title>
+          </Head>
+          <h1>First Post</h1>
+          <h2>
+            <Link href="/">
+              <a>Back to home</a>
+            </Link>
+          </h2>
+        </Layout>
+      )
+    }
+  </code>
+</pre>
+
+<p><strong>Tacando CSS para dentro!</strong></p>
+
+<p>Para adicionar CSS usaremos os Módulos CSS, eles permitem colocar CSS em um component React.
+Para isso crie um arquivo <code>/components/layout.module.css</code></p>
+<pre>
+  <code>
+    .container {
+      max-width: 36rem;
+      padding: 0 1rem;
+      margin: 3rem auto 6rem;
+    }
+  </code>
+</pre>
+
+<pre><strong>Importante: </strong>Para usar os módulos do CSS é necessário que o arquivo termine com 'module.css'</pre>
+
+<p><strong>Para usar o </strong><code>layout</code>: </p>
+
+<ul>
+  <li>Importá-lo dentro de <code>layout</code> como <code>styles</code></li>
+  <li>Use <code>'styles.<class-name>'</code> como 'className'</li>
+</ul>
+<pre>
+  <code>
+    import styles from './layout.module.css'
+
+    export default function Layout({ children }) {
+      return <div className={styles.container}>{children}</div>
+    }
+  </code>
+</pre>
+<p>Agora...sua página na rota: localhost:3000/posts/first-post</p>
+
+<p><strong>Nomes de classes são gerados automaticamente.</strong></p>
+<p>Agora se você olhar no devTools do seu navegador vai perceber que a <code>div</code> que nós alteramos tem um nome parecido com
+<code>layout_container...</code>. É isso que os módulos CSS fazem: <i>gera nomes exclusivos de classes.</i>Usando eles não precisa se preocupar 
+com a confusão dos nomes das classes.</p>
+
+
