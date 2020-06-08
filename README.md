@@ -74,7 +74,7 @@ o código da página de destino já estará carregado em segundo plano e a trans
 <p>O Next.js utiliza a pasta <code>/public</code> para guardar arquivos estáticos como imagens. Esse diretório
 fica na raiz do projeto, igual ao <code>/pages</code>.</p>
 <pre>
-  <img src="/..." alt="..." className="...">
+  <code><img src="/..." alt="..." className="..."></code>
 </pre>
 
 <h2>Adicionando Metadados</h2>
@@ -82,16 +82,18 @@ fica na raiz do projeto, igual ao <code>/pages</code>.</p>
 <p><strong><code>Head component: </code></strong></p>
 <p>Para mudar, por exemplo o título da página basta importar o <code><Head></code>, fica assim: </p>
 <pre>
-  import Head from 'next/head';
-  ...function () {
-    return (
-      <>
-        <Head>
-          <title>Mudei meu título...</title>
-        </Head>
-      </>
-    )
-  }
+  <code>
+    import Head from 'next/head';
+    ...function () {
+      return (
+        <>
+          <Head>
+            <title>Mudei meu título...</title>
+          </Head>
+        </>
+      )
+    }
+  </code>
 </pre>
 <p>Abra o devTools e veja o <code><title></code> adicionado lá dentro.</p>
 
@@ -99,9 +101,11 @@ fica na raiz do projeto, igual ao <code>/pages</code>.</p>
 <p><strong>Estilo CSS:</strong></p>
 <P>Para utilizar o CSS no Next.js você precisa escrever: </P>
 <pre>
-  <style jsx>{`
-    ... código CSS
-  `}</style>
+  <code>
+    <style jsx>{`
+      ... código CSS
+    `}</style>
+  </code>
 </pre>
 <P>Aqui você está usando a biblioteca chamada <code>sytled-jsx</code>, ou seja, uma lib <i>"CSS-in-JS"</i> que permite escrever
 CSS em um componente React, fazendo com que os estilos tenham escopo definido - outros components não serão afetados.
